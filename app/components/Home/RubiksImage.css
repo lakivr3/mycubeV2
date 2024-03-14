@@ -1,0 +1,59 @@
+.rubiksimage {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://www.wallpaperflare.com/static/763/490/553/rubiks-cube-puzzle-multi-colored-shallow-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.rubiksimage-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.rubiksimage-h1-first {
+  font-size: 2.5rem;
+
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+.rubiksimage-h1-second {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.rubiksimage-content-button {
+  margin-top: 1rem;
+  top: 25rem;
+  right: 15rem;
+}
+
+.rubiksimage-content-button button {
+  font-size: 30px;
+  font-weight: 300;
+  box-shadow: 0 2px 10px 1px black;
+}
+@media screen and (max-width: 550px) {
+  .rubiksimage {
+    height: 60vh;
+  }
+  .rubiksimage-content-button button {
+    font-size: 20px;
+  }
+  .rubiksimage-content {
+    margin-top: 0rem;
+  }
+  .rubiksimage-h1-first {
+    font-size: 1.2rem;
+  }
+  .rubiksimage-h1-second {
+    font-size: 2.4rem;
+  }
+}

@@ -1,0 +1,147 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  padding: 0px;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+.cart {
+  position: relative;
+  width: 3.5rem;
+  height: 1rem;
+}
+
+.cart-h1 {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: red;
+  font-weight: 600;
+}
+.navbar-logo {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-content: center;
+}
+.navbar-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.navbar-my {
+  color: red;
+  font-weight: 1000;
+  font-size: 36px;
+}
+.navbar-links {
+  display: flex;
+  flex: 1;
+  gap: 2rem;
+  justify-content: center;
+  padding-right: 50px;
+  align-items: center;
+}
+.navbar-links ul {
+  display: flex;
+  justify-content: center;
+}
+.navbar-links li {
+  margin: 0 1rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 20px;
+}
+.navbar-links li:hover {
+  color: red;
+  cursor: pointer;
+}
+.navbar-cube-rotate {
+  position: absolute;
+  top: -2rem;
+  left: 2.3rem;
+}
+.navbar-links-input {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.navbar-links-smallscreen-menu:hover {
+  color: red;
+}
+.navbar-links-smallscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("../../../public/assets/rubikwall.jpg");
+  background-size: cover;
+  background-position: top center;
+
+  transition: 0.5s ease;
+  color: white;
+  flex-direction: column;
+  z-index: 5;
+}
+.navbar-links-smallscreen-overlay .overlay-close {
+  font-size: 27px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.navbar-links-smallscreen {
+  margin: 2rem;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+@media screen and (max-width: 995px) {
+  .navbar-logo {
+    padding-left: 1.3rem;
+  }
+  .navbar-cube-rotate {
+    left: 1rem;
+  }
+  .navbar-links {
+    display: none;
+  }
+  .navbar-links-smallscreen-overlay {
+    display: flex;
+  }
+  .navbar-links-smallscreen {
+    margin: 1.3rem;
+  }
+  .cart-smallscreen {
+    margin-bottom: 0.5rem;
+  }
+}
+@media screen and (min-width: 996px) {
+  .navbar-links-smallscreen {
+    display: none;
+  }
+  .cart-smallscreen {
+    display: none;
+  }
+}
+.active {
+  color: red;
+  border-bottom: 1px solid red;
+}
+.navbar-my {
+  border: none;
+}
+.cart-smallscreen {
+  border: none;
+}
