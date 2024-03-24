@@ -28,9 +28,10 @@
   height: 80px;
   border-radius: 50%;
 }
-.rew-reviews-review-image img {
+.avatar {
+  background-color: white;
   border-radius: 50%;
-  width: 78px;
+  width: 75px;
   height: 76px;
 }
 .rew-reviews-review-content {

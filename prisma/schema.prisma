@@ -31,6 +31,14 @@ model Review {
   image       String @db.VarChar(255)
 }
 
+model Blog {
+  id          Int      @id @default(autoincrement())
+  image       String   @db.VarChar(255)
+  title       String   @db.VarChar(255)
+  description String   @db.Text
+  date        DateTime @default(now())
+}
+
 enum Status {
   AVAILABLE
   NOT_AVAILABLE

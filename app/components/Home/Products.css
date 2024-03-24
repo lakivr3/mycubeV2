@@ -1,30 +1,30 @@
-.bestsellers {
+.products {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   margin: 2rem 0rem 0 0rem;
 }
-.bestsellers-h1 {
+.products-h1 {
   font-size: 2.25rem;
   font-weight: 700;
   color: red;
   letter-spacing: 0.05rem;
   text-align: center;
 }
-.bestsellers-p {
+.products-p {
   text-align: center;
 
   align-self: center;
   max-width: 800px;
 }
-.bestsellers-bestseller {
+.products-product {
   display: flex;
   justify-content: space-around;
 
   flex-wrap: wrap;
   margin-top: 2rem;
 }
-.bestsellers-bestseller-cube {
+.products-product-cube {
   border: 1px solid rgb(187, 187, 187);
   width: 170px;
   max-height: 400px;
@@ -57,7 +57,7 @@
   right: 44.5%;
 }
 
-.bestsellers-bestseller-cube:hover {
+.products-product-cube:hover {
   cursor: pointer;
   background-color: gray;
   & .newcube {
@@ -87,16 +87,16 @@
       both;
     animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
-  & .bestsellers-bestseller-cube-about-cart h1 {
+  & .products-product-cube-about-cart h1 {
     color: black;
   }
 }
 
-.bestsellers-bestseller-cube:hover h1,
-.bestsellers-bestseller-cube:hover p {
+.products-product-cube:hover h1,
+.products-product-cube:hover p {
   color: white;
 }
-.bestsellers-bestseller-cube img {
+.products-product-cube img {
   border-bottom: 1px solid rgb(187, 187, 187);
   width: 170px;
   height: 130px;
@@ -105,28 +105,28 @@
   display: block;
   backface-visibility: hidden;
 }
-.bestsellers-bestseller-cube-about {
+.products-product-cube-about {
   padding-left: 1rem;
 }
-.bestsellers-bestseller-cube-about-title {
+.products-product-cube-about-title {
   font-size: 1rem;
   font-weight: 700;
   height: 60px;
 }
-.bestsellers-bestseller-cube-about-price {
+.products-product-cube-about-price {
   font-size: 24px;
   color: red;
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.bestsellers-bestseller-cube-about-description {
+.products-product-cube-about-description {
   border-top: 1px solid rgb(187, 187, 187);
   font-size: 12px;
   margin-right: 1rem;
   padding-bottom: 3rem;
   height: 85px;
 }
-.bestsellers-bestseller-cube-about-cart {
+.products-product-cube-about-cart {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -136,7 +136,7 @@
   border-top: 1px solid rgb(187, 187, 187);
 }
 
-.bestsellers button {
+.products button {
   margin: 2rem 0 2rem 0;
   align-self: center;
 }
@@ -162,10 +162,10 @@
   }
 }
 @media screen and (min-width: 780px) {
-  .bestsellers-bestseller-cube {
+  .products-product-cube {
     width: 190px;
   }
-  .bestsellers-bestseller-cube img {
+  .products-product-cube img {
     width: 190px;
     height: 150px;
   }

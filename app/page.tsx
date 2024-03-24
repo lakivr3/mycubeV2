@@ -2,6 +2,7 @@ import AboutUs from "./components/Home/AboutUs";
 import Products from "./components/Home/Products";
 import RubiksImage from "./components/Home/RubiksImage";
 import Reviews from "@/app/components/Home/Reviews";
+import HomeBlog from "@/app/components/Home/HomeBlog";
 import prisma from "@/prisma/client";
 
 export default async function Home() {
@@ -11,6 +12,9 @@ export default async function Home() {
   const bestsellers = await prisma.cube.findMany({
     where: { category: "BEST_SELLER" },
   });
+  const news = await prisma.blog.findMany({
+    orderBy: { date: "desc" },
+  });
 
   return (
     <>
@@ -19,6 +23,7 @@ export default async function Home() {
       <AboutUs />
       <Products cubes={bestsellers} />
       <Reviews />
+      <HomeBlog news={news} />
     </>
   );
 }

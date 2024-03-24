@@ -1,6 +1,7 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import "./Reviews.css";
+import { Avatar } from "@radix-ui/themes";
 
 const Testemonials = async () => {
   const reviews = await prisma.review.findMany({
@@ -14,7 +15,7 @@ const Testemonials = async () => {
         {reviews.map((review) => (
           <div key={review.id} className="rew-reviews-review">
             <div className="rew-reviews-review-image">
-              <img src={review.image} alt="cubesimg" />
+              <Avatar src={review.image} fallback="?" className="avatar" />
             </div>
             <div className="rew-reviews-review-content">
               <h1 className="rew-reviews-review-content-name">{review.user}</h1>
@@ -23,7 +24,7 @@ const Testemonials = async () => {
                 {review.description}
               </p>
               <p className="rew-reviews-review-content-grade">
-                {review.grade} /10
+                {review.grade}/10
               </p>
             </div>
           </div>

@@ -113,6 +113,11 @@ const Navbar = () => {
               <li onClick={() => handleToggleClick()}>
                 <Link href="/contact">Contact</Link>
               </li>
+              <li>
+                {status === "unauthenticated" && (
+                  <Link href="/api/auth/signin">Login</Link>
+                )}
+              </li>
             </ul>
           </div>
         )}

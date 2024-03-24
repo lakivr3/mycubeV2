@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rubik's Cube
+* source:	https://sketchfab.com/3d-models/rubiks-cube-0caea82d08a944578e32a2b5dfeb7c14
+* author:	Hoho (https://sketchfab.com/hoho03)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rubik's Cube" (https://sketchfab.com/3d-models/rubiks-cube-0caea82d08a944578e32a2b5dfeb7c14) by Hoho (https://sketchfab.com/hoho03) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
