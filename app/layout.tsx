@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Home/Footer";
 import Navbar from "./components/Navbar/NavBar";
@@ -9,7 +9,7 @@ import { Theme } from "@radix-ui/themes";
 import QueryClientProvider from "./QueryClientProvider";
 import AppContext from "./context";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Raleway({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -9,13 +9,24 @@ import "./NavBar.css";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { Avatar, Box, Dialog, DropdownMenu, Text } from "@radix-ui/themes";
+import { useGlobalContext } from "@/app/context";
+import classNames from "classnames";
+import { usePathname } from "next/navigation";
 
 // import { NavLink } from "react-router-dom";
 const Navbar = () => {
+  const links = [
+    { label: "About", href: "/about" },
+    { label: "Cubes", href: "/cubes" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
+  ];
+  const currentPath = usePathname();
+
   const [toggleMenu, setToggleMenu] = useState(false);
   const { status, data: session } = useSession();
 
-  //   const { cart } = useGlobalContext();
+  const { cart } = useGlobalContext();
   const handleToggleClick = () => {
     setToggleMenu(false);
     window.scrollTo(0, 0);
@@ -42,7 +53,7 @@ const Navbar = () => {
                 size={25}
                 style={{ marginBottom: "2rem", marginLeft: "1rem" }}
               />
-              <span className="cart-h1">{/* {cart.length} */}0</span>
+              <span className="cart-h1">{cart.length}</span>
             </Link>
           </div>
         </div>
@@ -50,18 +61,21 @@ const Navbar = () => {
 
       <div className="navbar-links ">
         <ul>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/cubes">Cubes</Link>
-          </li>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
+          {links.map((link) => (
+            <li key={link.label}>
+              <Link
+                href={link.href}
+                className={classNames({
+                  "nav-link": true,
+                  "!text-[#ff0000] border-b-2 border-[#ff0000]":
+                    link.href === currentPath,
+                })}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+
           <li>
             {status === "unauthenticated" && (
               <Link href="/api/auth/signin">Login</Link>
@@ -74,7 +88,7 @@ const Navbar = () => {
                   size={25}
                   style={{ marginTop: "2px", marginLeft: "1rem" }}
                 />
-                <span className="cart-h1">{/* {cart.length} */}0</span>
+                <span className="cart-h1">{cart.length}</span>
               </div>
             </Link>
           </div>

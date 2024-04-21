@@ -15,7 +15,7 @@ const Testemonials = async () => {
         {reviews.map((review) => (
           <div key={review.id} className="rew-reviews-review">
             <div className="rew-reviews-review-image">
-              <Avatar src={review.image} fallback="?" className="avatar" />
+              <Avatar src={review.image!} fallback="?" className="avatar" />
             </div>
             <div className="rew-reviews-review-content">
               <h1 className="rew-reviews-review-content-name">{review.user}</h1>

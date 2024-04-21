@@ -7,3 +7,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+@layer utilities {
+  .nav-link {
+    @apply hover:text-[#ff0000] transition-colors;
+  }
+}

@@ -59,7 +59,7 @@ const Contact = () => {
   };
   return (
     <div>
-      <h1 className="text-4xl bold text-[rgb(255,0,0)] text-center  mt-[2rem]">
+      <h1 className="text-4xl font-bold  text-[rgb(255,0,0)] text-center  mt-[2rem]">
         Get in touch
       </h1>
       <div className="xl:mt-4 xl:flex-row flex-col flex gap-10 overflow-hidden ">
