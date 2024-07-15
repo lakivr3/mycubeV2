@@ -1,5 +1,11 @@
 "use client";
-import { createContext, PropsWithChildren, useContext, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 
 interface Cart {
   id: number;
@@ -9,7 +15,6 @@ interface Cart {
   price: number;
 }
 
-// Providing an initial value for the context
 const initialCartValue: Cart[] = [];
 
 const GlobalContext = createContext<{
@@ -24,6 +29,23 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 const AppContext = ({ children }: PropsWithChildren<{}>) => {
   const [cart, setCart] = useState<Cart[]>(initialCartValue);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedCart = sessionStorage.getItem("cart");
+      if (storedCart) {
+        setCart(JSON.parse(storedCart));
+      }
+      setIsClient(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart, isClient]);
 
   return (
     <GlobalContext.Provider value={{ cart, setCart }}>

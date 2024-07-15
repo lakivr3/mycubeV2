@@ -36,6 +36,7 @@ const Products = ({ cubes }: Props) => {
       });
     } else {
       const newItem = { ...cube, quantity: 1 };
+      sessionStorage.setItem("cart", JSON.stringify(newItem));
       setCart([...cart, newItem]);
       toast.success("Added to cart!");
     }

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { Blog } from "@prisma/client";
 import axios from "axios";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const BlogPage = () => {
   const truncateString = (str: string, num: number) => {
@@ -25,7 +26,7 @@ const BlogPage = () => {
     staleTime: 60 * 1000,
     retry: 3,
   });
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <LoadingSpinner />;
 
   if (error) return null;
 

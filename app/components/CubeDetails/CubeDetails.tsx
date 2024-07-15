@@ -1,10 +1,9 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AiOutlineMinus } from "react-icons/ai";
 import { GrFormAdd } from "react-icons/gr";
 import { Cube } from "@prisma/client";
-import cartHook from "@/app/{hooks}/cartHook";
 import { notFound } from "next/navigation";
 import "./CubeDetails.scss";
 import { useGlobalContext } from "@/app/context";
@@ -53,6 +52,8 @@ const CubeDetails = ({ cube }: { cube: Cube }) => {
       });
     } else {
       const newItem = { ...cube, quantity };
+      sessionStorage.setItem("cart", JSON.stringify(newItem));
+
       setCart([...cart, newItem]);
       toast.success("Added to cart!");
     }

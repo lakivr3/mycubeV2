@@ -9,6 +9,7 @@ import { LuShoppingCart } from "react-icons/lu";
 import SectionWrapper from "../components/SectionWrapper";
 import { useGlobalContext } from "../context";
 import toast, { Toaster } from "react-hot-toast";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const AllCubes = () => {
   const { cart, setCart } = useGlobalContext();
@@ -37,11 +38,13 @@ const AllCubes = () => {
       });
     } else {
       const newItem = { ...cube, quantity: 1 };
+      sessionStorage.setItem("cart", JSON.stringify(newItem));
+
       setCart([...cart, newItem]);
       toast.success("Added to cart!");
     }
   };
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <LoadingSpinner />;
 
   if (error) return null;
 

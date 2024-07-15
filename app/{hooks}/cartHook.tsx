@@ -1,4 +1,3 @@
-import { Cube } from "@prisma/client";
 import { useState } from "react";
 interface Cart {
   id: number;
