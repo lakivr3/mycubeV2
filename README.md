@@ -14,10 +14,7 @@
 
 ## Getting Started
 
-### Prerequisites
 
-- Node.js (vXX.XX.X)
-- NPM (vX.X.X) or Yarn (vX.X.X)
 
 ### Installation
 
