@@ -6,8 +6,7 @@ import { useGlobalContext } from "../context";
 import { useRouter } from "next/navigation";
 
 const Cart = () => {
-  const { cart, setCart } = useGlobalContext();
-  const [total, setTotal] = useState(0);
+  const { cart, setCart, setTotal, total } = useGlobalContext();
   const [price, setPrice] = useState(0);
   const [isClient, setIsClient] = useState(false);
 

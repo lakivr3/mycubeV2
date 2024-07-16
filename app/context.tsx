@@ -20,15 +20,21 @@ const initialCartValue: Cart[] = [];
 const GlobalContext = createContext<{
   cart: Cart[];
   setCart: React.Dispatch<React.SetStateAction<Cart[]>>;
+  total: number;
+  setTotal: React.Dispatch<React.SetStateAction<number>>;
 }>({
   cart: initialCartValue,
   setCart: () => {},
+  total: 0,
+  setTotal: () => {},
 });
 
 export const useGlobalContext = () => useContext(GlobalContext);
 
 const AppContext = ({ children }: PropsWithChildren<{}>) => {
   const [cart, setCart] = useState<Cart[]>(initialCartValue);
+  const [total, setTotal] = useState<number>(0);
+
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -48,7 +54,7 @@ const AppContext = ({ children }: PropsWithChildren<{}>) => {
   }, [cart, isClient]);
 
   return (
-    <GlobalContext.Provider value={{ cart, setCart }}>
+    <GlobalContext.Provider value={{ cart, setCart, total, setTotal }}>
       {children}
     </GlobalContext.Provider>
   );
