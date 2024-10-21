@@ -2,7 +2,7 @@
 
 ## Project Demo
 
-[Watch Video Preview](https://res.cloudinary.com/dpqa0z1g9/video/upload/MyCubePreview_vsuirx.mp4?_s=vp-2.1.0)
+![MyCubePreview_vsuirx](https://github.com/user-attachments/assets/e4e726e6-0986-4183-9b6e-13c12f9e13c4)
 
 
 ## Overview
