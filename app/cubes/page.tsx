@@ -49,7 +49,7 @@ const AllCubes = () => {
   if (error) return null;
 
   return (
-    <div className="products">
+    <div className="products ">
       <div className="products-h1">All of our cubes</div>
 
       <div className="products-product cubes ">
